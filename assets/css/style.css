@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +7,7 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
@@ -47,6 +48,7 @@ body {
   color: #fff;
   text-transform: uppercase;
   text-align: center;
+  backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -54,6 +56,7 @@ body {
   font-size: 60px;
   font-weight: 700;
   letter-spacing: 30px;
+  animation: moveInLeft 1.5s ease-in-out;
 }
 
 .heading-primary-sub {
@@ -61,4 +64,33 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 10px;
+  animation: moveInRight 1.5s ease-in-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
